@@ -3,7 +3,11 @@
 
 # What's Included
 :heavy_check_mark: Responsive Layout with Bootstrap 5
+
 :heavy_check_mark: SASS Styles
+
 :heavy_check_mark: Use of Vanilla Javascript
+
 :heavy_check_mark: NoSQL Database with MongoDB
+
 :heavy_check_mark: Use of Flask
