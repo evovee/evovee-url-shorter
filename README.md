@@ -15,3 +15,7 @@
 :heavy_check_mark: Use of Python and Flask
 
 ## Creators
+
+### Lorenzo Bunaj
+
+### Luca D'Ambrosio
