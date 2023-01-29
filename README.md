@@ -12,7 +12,7 @@
 
 :heavy_check_mark: NoSQL Database with MongoDB
 
-:heavy_check_mark: Use of Python and Flask
+:heavy_check_mark: Use of Python with Flask Framework
 
 ## Creators
 
