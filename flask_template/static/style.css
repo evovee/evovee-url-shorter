@@ -2,6 +2,7 @@
 :root {
     --body-bg-color: #0d1117;
     --footer-bg-color: black;
+    --input-shadow-color: purple;
     --info-rounded: 7%;
 }
 
@@ -53,6 +54,9 @@ footer {
     #info-sm {
         margin-bottom: 20vh;
     }
+    #io-form {
+        width: 60%
+    }
 }
 @media (max-width: 992px) {
     #navbar-menu-lg {
@@ -60,6 +64,9 @@ footer {
     }
     #info-sm {
         margin-bottom: 30vh;
+    }
+    #io-form {
+        width: 75%;
     }
 }
 @media (max-width: 768px) {
@@ -84,6 +91,22 @@ footer {
 /* navbar */
 nav {
     backdrop-filter: saturate(160%) blur(15px);
+}
+
+/* input-output section */
+#io-field {
+    background-color: var(--body-bg-color);
+    border-bottom-color: #26292f;
+    border-width: 0 0 4px;
+    animation: io-field-appear 2.0s forwards;
+}
+#io-field:focus {
+    box-shadow: 0px 0px 0px var(--input-shadow-color);
+    -webkit-box-shadow: 0px 0px 5px var(--input-shadow-color);
+}
+@keyframes io-field-appear {
+    0% { width: 0%; }
+    100% { width: 100%; }
 }
 
 /* info section */

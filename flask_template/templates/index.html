@@ -15,6 +15,9 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
         crossorigin="anonymous"
     >
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
   </head>
   <body style="background-color: #0d1117">
     <!-- navbar-->
@@ -56,43 +59,43 @@
 
     <!-- input-output section -->
     <!-- input-output field -->
-    <div style="margin-top: 15vh;" class="container">
-        <form class="d-flex justify-content-center">
-            <input type="text" class="form-control w-50 bg-dark text-white">
+    <div style="margin-top: 15vh;" class="container d-flex justify-content-center">
+        <form id="io-form" class="d-flex justify-content-left">
+            <input id="io-field" type="text" placeholder="link" class="form-control rounded-0 text-white">
         </form>
     </div>
     <!-- starting button -->
     <div class="container h-20 my-5">
         <form class="d-flex justify-content-center">
-            <input type="button" value="" class="btn w-20 rounded-pill border-white text-white">
+            <input id="i-button" type="button" value="to do" class="btn w-20 text-white bg-dark">
         </form>
+        
     </div>
 
     <!-- info section -->
     <!-- info fields (width > 576px) -->
     <div id="info-sm" class="container text-white">
         <div class="row h-100 d-flex justify-content-around">
-            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black">
+            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black reveal">
                 info 1
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black">
+            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black reveal">
                 info 2
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black">
+            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black reveal">
                 info 3
             </div>
         </div>
     </div>
     <!-- info fields (width < 576px) -->
     <div id="info-xs" class="h-75">
-        <div class="container h-20 mb-5 d-flex justify-content-center text-white bg-black">
+        <div class="container h-20 mb-5 d-flex justify-content-center text-white bg-black reveal">
             info 1
         </div>
-        <div class="container h-20 mb-5 d-flex justify-content-center text-white bg-black">
+        <div class="container h-20 mb-5 d-flex justify-content-center text-white bg-black reveal">
             info 2
         </div>
-    
-        <div class="container h-20 d-flex justify-content-center text-white bg-black">
+        <div class="container h-20 d-flex justify-content-center text-white bg-black reveal">
             info 3
         </div>
     </div>
@@ -169,6 +172,18 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous">
+    </script>
+
+    <!-- ScrollReveal configuration -->
+    <script>
+        ScrollReveal().reveal('.reveal',
+        {
+            distance: '60px',
+            duration: 1500,
+            easing: 'cubic-bezier(.2, .6, .4, 1)',
+            interval: 100,
+            mobile: true
+        });
     </script>
   </body>
 </html>
