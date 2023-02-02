@@ -20,6 +20,9 @@
 
 [//]: # AGGIUNGERE I RESTANTI CREATORI
 
+
+##### Parzivall & Wassoky
+
 ##### Lorenzo Bunaj
 
 ##### Luca D'Ambrosio
