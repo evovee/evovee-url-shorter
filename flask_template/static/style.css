@@ -1,0 +1,96 @@
+/* root */
+:root {
+    --body-bg-color: #0d1117;
+    --footer-bg-color: black;
+    --info-rounded: 7%;
+}
+
+/* default values */
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--body-bg-color);
+}
+footer {
+    background-color: var(--footer-bg-color);
+}
+
+/* utility */
+.h-20 {
+    height: 20%;
+}
+.h-40 {
+    height: 40%;
+}
+.h-60 {
+    height: 60%;
+}
+.h-80 {
+    height: 80%;
+}
+.w-20 {
+    width: 20%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-60 {
+    width: 60%;
+}
+.w-80 {
+    width: 80%;
+}
+
+#info-sm {
+    height: 25%;
+}
+
+/* media query */
+@media (min-width: 993px) {
+    #navbar-menu-md- {
+        display: none;
+    }
+    #info-sm {
+        margin-bottom: 20vh;
+    }
+}
+@media (max-width: 992px) {
+    #navbar-menu-lg {
+        display: none;
+    }
+    #info-sm {
+        margin-bottom: 30vh;
+    }
+}
+@media (max-width: 768px) {
+    #github-link {
+        display: none;
+    }
+    #info-sm {
+        margin-bottom: 60vh;
+    }
+}
+@media (min-width: 577px) {
+    #info-xs {
+        display: none;
+    }
+}
+@media (max-width: 576px) {
+    #info-sm {
+        display: none;
+    }
+}
+
+/* navbar */
+nav {
+    backdrop-filter: saturate(160%) blur(15px);
+}
+
+/* info section */
+#info-sm div div {
+    border-radius: var(--info-rounded);
+}
+#info-xs div {
+    border-radius: var(--info-rounded);
+    width: 70%;
+}
