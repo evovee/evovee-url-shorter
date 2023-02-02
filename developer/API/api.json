@@ -1,0 +1,21 @@
+{
+    "all" : {
+        "rate limit - standard" : "1/4 sec"
+    },
+    "Create" : {
+        "endpoint" : "/api/url/create",
+        "method" : "POST",
+        "headers" : {},
+        "json": {
+            "url" : "https://google.com"
+        },
+        "response" : "refer string"
+    },
+    "Get": {
+        "endpoint" : "/api/url/get?refer=REFER",
+        "method" : "GET",
+        "headers" : {},
+        "data" : {},
+        "response"  : "your link"
+    }
+}
