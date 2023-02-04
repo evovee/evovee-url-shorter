@@ -1,0 +1,52 @@
+@import '../style.css';
+
+.menuNavbar{
+    position: absolute;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 992px){
+    .button-link{
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition-duration: .5s;
+    }
+    
+    .menuNavbar{
+        visibility: visible;
+        transition: .5s;
+        transition-timing-function: ease;
+        position: fixed;
+        left: -100rem;
+        top: 56px;
+        width: 100%;
+        height: 12rem;
+        opacity: 1;
+        background-color: rgb(48, 55, 66);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .menuNavbar div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 50%;
+    }
+    .menuNavbar div:first-child{
+        border-bottom: 4px solid rgb(38, 45, 53);
+    }
+    .menuNavbar div a{
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+    }
+    
+    
+}
