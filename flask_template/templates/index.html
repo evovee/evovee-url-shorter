@@ -74,29 +74,53 @@
 
     <!-- info section -->
     <!-- info fields (width > 576px) -->
-    <div id="info-sm" class="container text-white">
-        <div class="row h-100 d-flex justify-content-around">
-            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black reveal">
-                info 1
+    <div id="info-sm" class="container text-white"> <!-- fix height class with js -->
+        <div class="row d-flex justify-content-around">
+            <div class="col-lg-3 col-md-5 col-sm-8 row justify-content-center mb-5">
+                <div class="mb-4 d-flex justify-content-center reveal">
+                    <img src="../img/link-icon.png" class="icon">
+                </div>
+                <div class="row h-25 justify-content-center reveal icon-text">Text Example</div>
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black reveal">
-                info 2
+            <div class="col-lg-3 col-md-5 col-sm-8 row justify-content-center mb-5">
+                <div class="mb-4 d-flex justify-content-center reveal">
+                    <img src="../img/security-icon.png" class="icon">
+                </div>
+                <div class="row h-25 justify-content-center reveal icon-text">Text Example</div>
             </div>
-            <div class="col-lg-3 col-md-5 col-sm-8 h-75 mb-5 d-flex justify-content-center bg-black reveal">
-                info 3
+            <div class="col-lg-3 col-md-5 col-sm-8 row justify-content-center mb-5">
+                <div class="mb-4 d-flex justify-content-center reveal icon-text">
+                    <img src="../img/speed-icon.png" class="icon">
+                </div>
+                <div class="row h-25 justify-content-center reveal icon-text">Text Example</div>
             </div>
         </div>
     </div>
     <!-- info fields (width < 576px) -->
-    <div id="info-xs" class="h-75">
-        <div class="container h-20 mb-5 d-flex justify-content-center text-white bg-black reveal">
-            info 1
+    <div id="info-xs" class="h-100">
+        <div class="container mb-5 text-white reveal">
+            <div class="row justify-content-center h-100 w-100">
+                <div class="d-flex justify-content-center reveal mb-3">
+                    <img src="../img/link-icon.png" class="icon">
+                </div>
+                <div class="row w-100 justify-content-center reveal icon-text">Text Example</div>
+            </div>
         </div>
-        <div class="container h-20 mb-5 d-flex justify-content-center text-white bg-black reveal">
-            info 2
+        <div class="container mb-5 text-white reveal">
+            <div class="row justify-content-center h-100 w-100">
+                <div class="d-flex justify-content-center reveal mb-3">
+                    <img src="../img/security-icon.png" class="icon">
+                </div>
+                <div class="row w-100 justify-content-center reveal icon-text">Text Example</div>
+            </div>
         </div>
-        <div class="container h-20 d-flex justify-content-center text-white bg-black reveal">
-            info 3
+        <div class="container mb-5 text-white reveal">
+            <div class="row justify-content-center h-100 w-100">
+                <div class="d-flex justify-content-center reveal mb-3">
+                    <img src="../img/speed-icon.png" class="icon">
+                </div>
+                <div class="row w-100 justify-content-center reveal icon-text">Text Example</div>
+            </div>
         </div>
     </div>
 
@@ -173,7 +197,6 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous">
     </script>
-
     <!-- ScrollReveal configuration -->
     <script>
         ScrollReveal().reveal('.reveal',
@@ -185,5 +208,14 @@
             mobile: true
         });
     </script>
+    <!-- js script -->
+    <script type="module">
+        import App from '../static/app.js';
+        import CONF from "../static/conf.js";
+
+        const inputButton = document.querySelector('#i-button');
+        inputButton.addEventListener('click', () => App(CONF));
+    </script>
+
   </body>
 </html>
