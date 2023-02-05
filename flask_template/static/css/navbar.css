@@ -1,0 +1,36 @@
+@import './style.css';
+
+/* navbar */
+nav {
+    backdrop-filter: saturate(160%) blur(15px);
+}
+
+/* mobile navbar */
+#nav-mobile-menu {
+    visibility: hidden;
+    transition: left .5s;
+}
+/* media queries */
+@media only screen and (max-width: 992px){
+    #show-nav-button {
+        background: none;
+        opacity: 100%;
+        border: none;
+        cursor: pointer;
+        transition: .5s;
+    }
+    #nav-mobile-menu {
+        visibility: visible;
+        left: -81%;
+        background-color: var(--nav-mobile-color);
+    }
+}
+
+/* background cover during the scroll */
+#scroll-cover {
+    height: 300%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s;
+    display: none;
+}
