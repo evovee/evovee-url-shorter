@@ -87,19 +87,19 @@
     </div>
 </nav>
 
-    <!-- input-output field -->
-    <div style="margin-top: 15vh;" class="container d-flex justify-content-center" >
-        <form id="io-form" class="d-flex justify-content-left">
-            <input id="io-field" type="text" placeholder="link" class="form-control rounded-0 text-white">
-        </form>
-    </div>
-    <!-- input button -->
-    <div class="container h-20 my-5">
-        <form class="d-flex justify-content-center">
-            <input id="i-button" type="button" value="to do" class="btn w-20 text-white bg-dark">
-        </form>
-        
-    </div>
+<!-- input-output field -->
+<div style="margin-top: 15vh;" class="container d-flex justify-content-center">
+    <form id="io-form" class="d-flex justify-content-left">
+        <input id="io-field" type="text" placeholder="link" class="form-control rounded-0 text-white">
+    </form>
+</div>
+<!-- input button -->
+<div class="container h-20 my-5">
+    <form class="d-flex justify-content-center">
+        <input id="i-button" type="button" onclick="shortUrl()" value="to do" class="btn w-20 text-white bg-dark">
+        <div id="shortened"></div>
+    </form>
+</div>
 
 <!-- info fields (width > 576px) -->
 <div id="info-sm" class="container text-white h-auto">
@@ -221,12 +221,26 @@
     import Hide from '../static/js/hideNav.js';
     import CONF from "../static/js/conf.js";
 
-        // event listeners
-        CONF.inputButton.addEventListener('click', () => App(CONF));
-        CONF.navButton.addEventListener('click', () => Show(CONF));
-        document.addEventListener('click', (event) => {
-            if (event.clientX > CONF.navMenu.getBoundingClientRect().right) Hide(CONF);
-        });
-    </script>
-  </body>
+    // event listeners
+    CONF.inputButton.addEventListener('click', () => App(CONF));
+    CONF.navButton.addEventListener('click', () => Show(CONF));
+    document.addEventListener('click', (event) => {
+        if (event.clientX > CONF.navMenu.getBoundingClientRect().right) Hide(CONF);
+    });
+</script>
+<script>
+    function shortUrl() {
+        var url = document.getElementById("io-field").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/url/create", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            document.getElementById("shortened").innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send(JSON.stringify({ url: url }));
+      }
+</script>
+</body>
 </html>
