@@ -18,7 +18,7 @@
 
 [//]: # AGGIUNGERE I RESTANTI CREATORI
 
-##### Parzivall & Wassoky
+##### Wassoky
 
 ##### Lorenzo Bunaj
 

@@ -1,9 +1,4 @@
-flask
-flask_wtf
-wtforms
-flask-sqlalchemy
-flask-migrate
-flask-restful
-flask-jwt
-bandit
-black
+flask=2.2.2
+Werkzeug=2.2.2
+flask-limiter
+pymongo
