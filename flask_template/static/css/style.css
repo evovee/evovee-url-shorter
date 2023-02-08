@@ -96,3 +96,22 @@ html {
 footer {
     background-color: var(--footer-bg-color);
 }
+
+
+/* about */
+
+@media (max-width: 1200px){
+    .article__about{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px){
+    .about__info{
+        line-height: 2rem !important;
+        font-size: 1.2rem !important;
+        margin-top: 2rem !important;
+        width: 90% !important;
+    }
+}
