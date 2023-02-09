@@ -1,0 +1,122 @@
+/* root */
+:root {
+    --nav-mobile-color: #26292f; 
+    --body-bg-color: #0d1117;
+    --footer-bg-color: black;
+    --input-shadow-color: #ff1616;
+    --input-border-color: #ff1616; 
+    --info-rounded: 7%;
+    --text-icon-color: white;
+    --invert-icons: 0;
+}
+
+/* default values */
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--body-bg-color);
+}
+html {
+    overflow-x: hidden;
+}
+
+/* media queries */
+@media (min-width: 993px) {
+    #navbar-menu-md- {
+        display: none;
+    }
+    #io-form {
+        width: 60%
+    }
+}
+@media (max-width: 992px) {
+    #navbar-menu-lg {
+        display: none;
+    }
+    #io-form {
+        width: 75%;
+    }
+    #github-link {
+        display: none;
+    }
+}
+@media (min-width: 577px) {
+    #info-xs {
+        display: none;
+    }
+}
+@media (max-width: 576px) {
+    #info-sm {
+        display: none;
+    }
+}
+
+/* input-output section */
+#io-field {
+    background-color: var(--body-bg-color);
+    border-bottom-color: var(--input-border-color);
+    border-width: 0 0 4px;
+    animation: io-field-appear 2.0s forwards;
+    transition: .3s;
+}
+#io-field:focus {
+    transition: .2s;
+    box-shadow: 0px 0px 10px var(--input-shadow-color);
+    -webkit-box-shadow: 0px 0px 10px var(--input-shadow-color);
+}
+@keyframes io-field-appear {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+#i-button {
+    width: 150px;
+    height: 60px;
+    background-color: #272822;
+    border-color: #444444;
+    border-width: 2.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: .3s;
+}
+#i-button:hover {
+    letter-spacing: 0.3rem;
+    border-color: var(--input-shadow-color);
+    width: 160px;
+}
+
+
+/* info section */
+#info-sm, #info-xs {
+    margin-bottom: 20vh;
+}
+#info-sm div div {
+    border-radius: var(--info-rounded);
+}
+#info-xs div {
+    border-radius: var(--info-rounded);
+    width: 70%;
+}
+/* icons */
+.icon {
+    width: 150px;
+    height: 150px;
+    transition: 1.0s;
+    filter: invert(var(--invert-icons));
+}
+.icon-text {
+    color: var(--text-icon-color);
+    font-size: large;
+}
+
+/* footer */
+footer {
+    background-color: var(--footer-bg-color);
+}
+
+/* about */
+#about-icon {
+    width: 250px;
+    height: 250px;
+}

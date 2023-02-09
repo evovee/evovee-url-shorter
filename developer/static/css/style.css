@@ -57,7 +57,7 @@ html {
     border-bottom-color: var(--input-border-color);
     border-width: 0 0 4px;
     animation: io-field-appear 2.0s forwards;
-    transition: 1.0s;
+    transition: .3s;
 }
 #io-field:focus {
     transition: .2s;
@@ -68,6 +68,24 @@ html {
     0% { width: 0%; }
     100% { width: 100%; }
 }
+#i-button {
+    width: 150px;
+    height: 60px;
+    background-color: #272822;
+    border-color: #444444;
+    border-width: 2.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: .3s;
+}
+#i-button:hover {
+    letter-spacing: 0.3rem;
+    border-color: var(--input-shadow-color);
+    width: 160px;
+}
+
 
 /* info section */
 #info-sm, #info-xs {
@@ -95,4 +113,10 @@ html {
 /* footer */
 footer {
     background-color: var(--footer-bg-color);
+}
+
+/* about */
+#about-icon {
+    width: 250px;
+    height: 250px;
 }

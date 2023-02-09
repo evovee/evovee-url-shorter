@@ -1,7 +1,8 @@
 import re
 import hashlib
 from utils import Database
-from flask import Flask, request
+from flask import Flask, request, render_template
+import json
 
 
 app = Flask(__name__)
@@ -27,9 +28,17 @@ def redirect_url(short_url):
         Il browser dell'utente riceve il comando di reindirizzamento e rendirizza l'utente all'URL originale.
     """
 
+# @app.route('/')
+# def docs():
+#     return json.loads(open("./API/api.json", "r").read())
+
 @app.route('/')
 def docs():
-    return json.loads(open("./API/api.json", "r").read())
+    return render_template("index.html")
+
+@app.route('/about/')
+def about():
+    return render_template('about.html')
 
 
 @app.route('/api/url/create', methods=["POST"])

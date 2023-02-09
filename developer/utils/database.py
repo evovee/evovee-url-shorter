@@ -20,7 +20,7 @@ def decrypt(url):
 
 
 class Database:
-    _host = MongoClient("")
+    _host = MongoClient("mongodb://localhost:27017/")
     _db = _host["developer-db-Url"]
     _collection = _db["URLs"]
 

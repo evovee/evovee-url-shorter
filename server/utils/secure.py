@@ -1,5 +1,6 @@
 from cryptography.fernet import Fernet
 
+
 static_key = b"bG4bmFDECl9_2WxFkcOAW2kErRenpqIgDtVPtnU9kmk="
 
 
