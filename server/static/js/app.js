@@ -9,7 +9,7 @@ const App = (CONF) => {
     changeColors(CONF);
     CONF.inputField.value = "";
     CONF.inputField.classList.add("text-center")
-    CONF.inputButton.value = "copy";
+    CONF.inputButton.innerText = "copy";
 }
 // change the color theme (red <-> blue)
 const changeColors = (CONF) => {
