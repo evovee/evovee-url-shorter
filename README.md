@@ -6,7 +6,7 @@
 ## What's Included
 :heavy_check_mark: Responsive Layout with Bootstrap 5
 
-:heavy_check_mark: SASS Styles
+:heavy_check_mark: CSS Styles
 
 :heavy_check_mark: Use of Vanilla Javascript ES6+
 
