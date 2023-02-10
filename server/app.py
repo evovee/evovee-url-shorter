@@ -1,5 +1,5 @@
 from core import *
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -10,6 +10,14 @@ limiter = Limiter(
     app=app,
     storage_uri="memory://"
 )
+
+@app.route('/')
+def docs():
+    return render_template("index.html")
+
+@app.route('/about/')
+def about():
+    return render_template('about.html')
 
 
 @app.route("/api/url/add", methods=["POST"])
