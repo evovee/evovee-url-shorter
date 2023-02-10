@@ -11,9 +11,11 @@ limiter = Limiter(
     storage_uri="memory://"
 )
 
+
 @app.route('/')
 def docs():
     return render_template("index.html")
+
 
 @app.route('/about/')
 def about():
@@ -23,30 +25,33 @@ def about():
 @app.route("/api/url/add", methods=["POST"])
 @limiter.limit("5/30second")
 def create():
+    print(request.get_json())
     addToDb = db.addUrl(request.get_json()["url"])
 
     if addToDb == 0:
-        return {"status": "general error - 0x0"}
-        
+        return {"status": 0x0}
+
     elif addToDb == 2:
-        return {"status": "invalid url - 0x2"}
-    
+        return {"status": 0x2}
+
     else:
         return {"status": addToDb}
+
 
 @app.route("/api/url/get", methods=["POST"])
 @limiter.limit("10/30second")
 def get():
-    addToDb = db.getUrl(request.get_json()["refer"])
+    getToDb = db.getUrl(request.get_json()["refer"])
 
-    if addToDb == 0:
-        return {"status": "general error - 0x0"}
-        
-    elif addToDb == 3:
-        return {"status": "invalid refer - 0x2"}
-    
+    if getToDb == 0:
+        return {"status": 0x0}
+
+    elif getToDb == 3:
+        return {"status": 0x3}
+
     else:
-        return {"status": addToDb}
+        return {"status": getToDb}
+
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 80)
