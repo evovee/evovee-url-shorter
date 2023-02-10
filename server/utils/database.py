@@ -18,9 +18,9 @@ def validate_url(url):
 
 
 class Database:
-    _host = MongoClient("mongodb://localhost:27017/")
-    _db = _host["developer-db-Url"]
-    _collection = _db["URLs"]
+    host = MongoClient("mongodb://localhost:27017/")
+    db = host["developer-db-Url"]
+    collection = db["URLs"]
 
     def addUrl(self, url: str) -> str | int:
         try:
