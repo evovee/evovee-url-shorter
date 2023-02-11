@@ -48,10 +48,12 @@
     <nav class="navbar navbar-expand-lg sticky-top bg-light bg-opacity-10 z-2">
         <div class="container-fluid">
             <div class="container">
-                <div class="row justify-content-between">
+                <div class="row justify-content-between align-items-center">
                     <!-- navbar brand -->
-                    <div class="col-4 d-flex justify-content-center ms-4">
-                        <a class="navbar-brand text-white" href="#">Shouft</a>
+                    <div class="col-4 justify-content-center ms-4">
+                        <a class="navbar-brand d-flex justify-content-center" href="#">
+                            <img id="logo" src="../static/img/shouft.png" class="h-auto">
+                        </a>
                     </div>
                     <!-- navbar menu (width > 992px) -->
                     <div id="navbar-menu-lg" class="col-4">
@@ -113,19 +115,25 @@
                 <div class="mb-4 d-flex justify-content-center reveal">
                     <img src="../static/img/link-icon.png" class="icon">
                 </div>
-                <div class="row h-25 justify-content-center reveal icon-text">Text Example</div>
+                <div class="row h-25 text-center reveal icon-text">
+                    <h2>Short Links</h2>
+                </div>
             </div>
             <div class="col-lg-3 col-md-5 col-sm-8 row justify-content-center mb-5">
                 <div class="mb-4 d-flex justify-content-center reveal">
                     <img src="../static/img/security-icon.png" class="icon">
                 </div>
-                <div class="row h-25 justify-content-center reveal icon-text">Text Example</div>
+                <div class="row h-25 text-center reveal icon-text">
+                    <h2>Top Security</h2>
+                </div>
             </div>
             <div class="col-lg-3 col-md-5 col-sm-8 row justify-content-center mb-5">
                 <div class="mb-4 d-flex justify-content-center reveal icon-text">
                     <img src="../static/img/speed-icon.png" class="icon">
                 </div>
-                <div class="row h-25 justify-content-center reveal icon-text">Text Example</div>
+                <div class="row h-25 text-center reveal icon-text">
+                    <h2>Quick and Efficient</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -137,7 +145,9 @@
                 <div class="d-flex justify-content-center reveal mb-3">
                     <img src="../static/img/link-icon.png" class="icon">
                 </div>
-                <div class="row w-100 justify-content-center reveal icon-text">Text Example</div>
+                <div class="row w-100 text-center reveal icon-text">
+                    <h2>Short Links</h2>
+                </div>
             </div>
         </div>
         <div class="container d-flex justify-content-center mb-5 text-white reveal">
@@ -145,7 +155,9 @@
                 <div class="d-flex justify-content-center reveal mb-3">
                     <img src="../static/img/security-icon.png" class="icon">
                 </div>
-                <div class="row w-100 justify-content-center reveal icon-text">Text Example</div>
+                <div class="row w-100 text-center reveal icon-text">
+                    <h2>Top Security</h2>
+                </div>
             </div>
         </div>
         <div class="container d-flex justify-content-center mb-5 text-white reveal">
@@ -153,7 +165,9 @@
                 <div class="d-flex justify-content-center reveal mb-3">
                     <img src="../static/img/speed-icon.png" class="icon">
                 </div>
-                <div class="row w-100 justify-content-center reveal icon-text">Text Example</div>
+                <div class="row w-100 text-center reveal icon-text">
+                    <h2>Quick and Efficient</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -201,13 +215,13 @@
     </script>
     <!-- js script -->
     <script type="module">
-        import ShortUrl from "{{url_for('static', filename='js/shortUrl.js')}}";
-        import Show from "{{url_for('static', filename='js/showNav.js')}}";
-        import Hide from "{{url_for('static', filename='js/hideNav.js')}}";
         import CONF from "{{url_for('static', filename='js/conf.js')}}";
+        import App from "{{url_for('static', filename='js/app.js')}}";
+        import Show from "{{url_for('static', filename='js/nav/show.js')}}";
+        import Hide from "{{url_for('static', filename='js/nav/hide.js')}}";
 
         // event listeners
-        CONF.inputButton.addEventListener('click', () => ShortUrl(CONF));
+        CONF.inputButton.addEventListener('click', () => App(CONF));
         CONF.navButton.addEventListener('click', () => Show(CONF));
         document.addEventListener('click', (event) => {
             if (event.clientX > CONF.navMenu.getBoundingClientRect().right) Hide(CONF);

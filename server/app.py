@@ -25,7 +25,7 @@ def about():
 @app.route("/api/url/add", methods=["POST"])
 @limiter.limit("5/30second")
 def create():
-    print(request.get_json())
+    # print(request.get_json())
     addToDb = db.addUrl(request.get_json()["url"])
 
     if addToDb == 0:

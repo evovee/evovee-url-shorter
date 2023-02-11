@@ -3,8 +3,8 @@
     --nav-mobile-color: #26292f; 
     --body-bg-color: #0d1117;
     --footer-bg-color: black;
-    --input-shadow-color: #ff1616;
-    --input-border-color: #ff1616; 
+    --input-border-color: #ff1616;
+    --input-width: 0%;
     --info-rounded: 7%;
     --text-icon-color: white;
     --invert-icons: 0;
@@ -51,22 +51,37 @@ html {
     }
 }
 
+#logo {
+    height: 100px;
+    width: 100px;
+}
+
 /* input-output section */
 #io-field {
     background-color: var(--body-bg-color);
     border-bottom-color: var(--input-border-color);
     border-width: 0 0 4px;
-    animation: io-field-appear 2.0s forwards;
+    animation: appear 2.0s forwards;
     transition: .3s;
 }
 #io-field:focus {
     transition: .2s;
-    box-shadow: 0px 0px 10px var(--input-shadow-color);
-    -webkit-box-shadow: 0px 0px 10px var(--input-shadow-color);
+    box-shadow: 0px 0px 10px var(--input-border-color);
+    -webkit-box-shadow: 0px 0px 10px var(--input-border-color);
 }
-@keyframes io-field-appear {
-    0% { width: 0%; }
+#io-field.invalid {
+    animation: invalid .3s infinite forwards;
+}
+@keyframes appear {
+    0% { width: var(--input-width); }
     100% { width: 100%; }
+}
+@keyframes invalid {
+    22.5% { translate: 12px 0; }
+    45% { translate: -12px 0; }
+    67.5% { translate: 12px 0; }
+    90% { translate: -12px 0; }
+    100% { translate: 0 0; }
 }
 #i-button {
     width: 150px;
@@ -82,7 +97,7 @@ html {
 }
 #i-button:hover {
     letter-spacing: 0.3rem;
-    border-color: var(--input-shadow-color);
+    border-color: var(--input-border-color);
     width: 160px;
 }
 
