@@ -38,13 +38,20 @@ class Database:
 
     def getUrl(self, refer: str) -> str | int:
 
-        if len(refer) != 14:
-            return error.INVALID_REFER
+        # if len(refer) != 14:
+        #     return error.INVALID_REFER
 
         try:
             url = self.collection.find_one({"refer": refer})
             return secure.decrypt(url["url"])
         except:
             return error.GENERAL_ERROR
+
+    # def getShortUrl(self, short: str) -> str | int:
+    #     try:
+    #         url = self.collection.find_one({"refer": short})
+    #         return secure.decrypt(url["url"])
+    #     except:
+    #         return error.GENERAL_ERROR
 
 

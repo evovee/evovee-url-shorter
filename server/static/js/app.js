@@ -6,11 +6,9 @@ const App = (CONF) => {
     if (CONF.inputButton.innerText === "SHORT") {
         Add(CONF);
     } else if (CONF.inputButton.innerText === "COPY") {
-        Get(CONF);
         navigator.clipboard.writeText(CONF.inputField.value);
     }
 }
-
 const Add = (CONF) => {
     fetch('/api/url/add', {
         method: 'POST',
@@ -39,7 +37,7 @@ const Get = (CONF) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ "refer" : CONF.inputField.value }) // esempio
+        body: JSON.stringify({ "refer" : window.location.href.substring(22) }) // esempio
     })
     .then(response => response.json())
     .then(response => {
@@ -50,8 +48,10 @@ const Get = (CONF) => {
 const GetResponse = (CONF, status) => {
     if ([0, 2, 3].includes(status)) {
         console.log("error");
+        console.log(status);
     } else {
-        // window.open(status);
+        window.location.href = status;
     }
 }
-export default App;
+
+export { App, Get };
