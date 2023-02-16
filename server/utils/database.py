@@ -38,8 +38,8 @@ class Database:
 
     def getUrl(self, refer: str) -> str | int:
 
-        # if len(refer) != 14:
-        #     return error.INVALID_REFER
+        if len(refer) != 14:
+            return error.INVALID_REFER
 
         try:
             url = self.collection.find_one({"refer": refer})

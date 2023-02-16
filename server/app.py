@@ -21,12 +21,6 @@ def docs():
 def about():
     return render_template('about.html')
 
-@app.route('/<refer>')
-def redirect(refer):
-    if refer not in ["", "about/"]:
-        return render_template('redirect.html')
-
-
 @app.route("/api/url/add", methods=["POST"])
 @limiter.limit("5/30second")
 def create():
@@ -56,20 +50,6 @@ def get():
 
     else:
         return {"status": getToDb}
-
-# @app.route('/<short>')
-# def urlRedirect(short):
-#     url = db.getShortUrl(short)
-# 
-#     if url == 0:
-#         return {"status": 0x0}
-# 
-#     elif url == 3:
-#         return {"status": 0x3}
-# 
-#     else:
-#         return redirect(url)
-
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 80)

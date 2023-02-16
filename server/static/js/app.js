@@ -31,27 +31,30 @@ const AddResponse = (CONF, status) => {
     }
 }
 
-const Get = (CONF) => {
-    fetch('/api/url/get', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ "refer" : window.location.href.substring(22) }) // esempio
-    })
-    .then(response => response.json())
-    .then(response => {
-        console.log(JSON.stringify(response));
-        GetResponse(CONF, response["status"]);
-    })
-}
-const GetResponse = (CONF, status) => {
-    if ([0, 2, 3].includes(status)) {
-        console.log("error");
-        console.log(status);
-    } else {
-        window.location.href = status;
-    }
-}
 
-export { App, Get };
+// DA CAMBIARE COMPLETAMENTE
+
+// const Get = (CONF) => {// 
+//    fetch('/api/url/get', {
+//        method: 'POST',
+//        headers: {
+//            'Content-Type': 'application/json'
+//        },
+//        body: JSON.stringify({ "refer" : window.location.href.substring(22) }) // esempio
+//    })
+//    .then(response => response.json())
+//    .then(response => {
+//        console.log(JSON.stringify(response));
+//        GetResponse(CONF, response["status"]);
+//    })
+// }
+// const GetResponse = (CONF, status) => {
+//     if ([0, 2, 3].includes(status)) {
+//         console.log("error");
+//         console.log(status);
+//     } else {// 
+//        window.location.href = status;
+//     }
+// }
+
+export default App;
